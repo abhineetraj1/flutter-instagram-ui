@@ -4,42 +4,36 @@ void main() {
   runApp(const MyApp());
 }
 
-void msg() {
-  navPressed(5);
-}
-
-void navPressed(int a) {
+void navPressed(context, int a) {
   if (a == 0) {
-    runApp(const Home());
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Home();}));
   } else if (a == 1) {
-    runApp(const Search());
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Search();}));
   } else if (a == 2) {
-    //runApp(app);
   } else if (a == 3) {
-    runApp(const Explore());
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Explore();}));
   } else if (a == 4) {
-    runApp(const Profile());
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Profile();}));
   } else if (a == 5) {
-    runApp(const Message());
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Message();}));
   } else if (a == 6){
-    runApp(const Notify());
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Notify();}));
   } else if (a == 7) {
-    runApp(const SettingTab());
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) {return SettingTab();}));
   } else if (a == 8) {
-    runApp(const Followers());
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Followers();}));
   } else if (a == 9) {
-    runApp(const Following());
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Following();}));
   } else if (a == 10) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Home();}));
     runApp(const EditProfile());
   } else if (a == 11) {
-    runApp(const Post());
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Post();}));
   } else if (a == 12) {
-    runApp(const Login());
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Login();}));
   } else if (a == 13) {
-    runApp(const SignUp());
-  } else {
-
-  }
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) {return SignUp();}));
+  } else {}
 }
 
 class MyApp extends StatelessWidget {
@@ -47,7 +41,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Profile();
+    return MaterialApp(
+      home:Profile()
+    );
   }
 }
 
@@ -68,7 +64,37 @@ class Home extends StatelessWidget {
             BottomNavigationBarItem(icon: Icon(Icons.explore), label: "Explore"),
             BottomNavigationBarItem(icon: Icon(Icons.switch_account), label: "Profile"),
           ],
-          onTap: navPressed,
+          onTap: (int a) {
+            if (a == 0) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Home();}));
+            } else if (a == 1) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Search();}));
+            } else if (a == 2) {
+            } else if (a == 3) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Explore();}));
+            } else if (a == 4) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Profile();}));
+            } else if (a == 5) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Message();}));
+            } else if (a == 6){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Notify();}));
+            } else if (a == 7) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return SettingTab();}));
+            } else if (a == 8) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Followers();}));
+            } else if (a == 9) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Following();}));
+            } else if (a == 10) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Home();}));
+              runApp(const EditProfile());
+            } else if (a == 11) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Post();}));
+            } else if (a == 12) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Login();}));
+            } else if (a == 13) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return SignUp();}));
+            } else {}
+          },
           currentIndex: 0,
           selectedItemColor: Color.fromARGB(255, 229, 0, 179),
         ),
@@ -79,8 +105,8 @@ class Home extends StatelessWidget {
               Text("Instagram", style: TextStyle(color: Colors.black),),
               Row(
                 children: [
-                  TextButton(onPressed: () {navPressed(6);},child: Icon(Icons.notifications, color: Colors.black,)),
-                  TextButton(onPressed: msg,child: Icon(Icons.message, color: Colors.black,)),
+                  TextButton(onPressed: () {navPressed(context, 6);},child: Icon(Icons.notifications, color: Colors.black,)),
+                  TextButton(onPressed: () {navPressed(context, 5);},child: Icon(Icons.message, color: Colors.black,)),
 
                 ],
               )
@@ -156,7 +182,37 @@ class Profile extends StatelessWidget {
             BottomNavigationBarItem(icon: Icon(Icons.explore), label: "Explore"),
             BottomNavigationBarItem(icon: Icon(Icons.switch_account), label: "Profile"),
           ],
-          onTap: navPressed,
+          onTap: (int a) {
+            if (a == 0) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Home();}));
+            } else if (a == 1) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Search();}));
+            } else if (a == 2) {
+            } else if (a == 3) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Explore();}));
+            } else if (a == 4) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Profile();}));
+            } else if (a == 5) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Message();}));
+            } else if (a == 6){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Notify();}));
+            } else if (a == 7) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return SettingTab();}));
+            } else if (a == 8) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Followers();}));
+            } else if (a == 9) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Following();}));
+            } else if (a == 10) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Home();}));
+              runApp(const EditProfile());
+            } else if (a == 11) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Post();}));
+            } else if (a == 12) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Login();}));
+            } else if (a == 13) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return SignUp();}));
+            } else {}
+          },
           currentIndex: 4,
           selectedItemColor: Color.fromARGB(255, 229, 0, 179),
         ),
@@ -172,7 +228,7 @@ class Profile extends StatelessWidget {
                     Row(
                       children: [
                         Icon(Icons.add_a_photo),
-                        TextButton(onPressed: () {navPressed(7);},child: Icon(Icons.settings, color: Colors.black))
+                        TextButton(onPressed: () {navPressed(context, 7);},child: Icon(Icons.settings, color: Colors.black))
                       ],
                     ),
                   ],
@@ -195,7 +251,7 @@ class Profile extends StatelessWidget {
                         ),
                         SizedBox(width: 20,),
                         TextButton(
-                          onPressed: () {navPressed(8);},
+                          onPressed: () {navPressed(context, 8);},
                           style: TextButton.styleFrom(foregroundColor: Colors.black),
                           child: Column(
                             children: [
@@ -206,7 +262,7 @@ class Profile extends StatelessWidget {
                         ),
                         SizedBox(width: 20,),
                         TextButton(
-                          onPressed:() {navPressed(9);},
+                          onPressed:() {navPressed(context, 9);},
                           style: TextButton.styleFrom(foregroundColor: Colors.black),
                           child: Column(
                             children: [
@@ -231,7 +287,7 @@ class Profile extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                       child: SizedBox(
                         width: MediaQuery.of(context).size.width*0.45,
-                        child: ElevatedButton(onPressed: () {navPressed(10);}, child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [Icon(Icons.edit, color: Colors.black,), Text("Edit profile", style: TextStyle(fontSize: 20, color: Colors.black))
+                        child: ElevatedButton(onPressed: () {navPressed(context, 10);}, child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [Icon(Icons.edit, color: Colors.black,), Text("Edit profile", style: TextStyle(fontSize: 20, color: Colors.black))
                         ],),style: ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 222, 222, 222)),),
                         ),
                       ),
@@ -248,9 +304,9 @@ class Profile extends StatelessWidget {
                 for (int i=0; i < 10; i=i+1) Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    TextButton(onPressed: () {navPressed(11);},child: Image.asset("assets/un.png", width: MediaQuery.of(context).size.width/3.7,)),
-                    TextButton(onPressed: () {navPressed(11);},child: Image.asset("assets/un.png", width: MediaQuery.of(context).size.width/3.7,)),
-                    TextButton(onPressed: () {navPressed(11);},child: Image.asset("assets/un.png", width: MediaQuery.of(context).size.width/3.7,)),
+                    TextButton(onPressed: () {navPressed(context, 11);},child: Image.asset("assets/un.png", width: MediaQuery.of(context).size.width/3.7,)),
+                    TextButton(onPressed: () {navPressed(context, 11);},child: Image.asset("assets/un.png", width: MediaQuery.of(context).size.width/3.7,)),
+                    TextButton(onPressed: () {navPressed(context, 11);},child: Image.asset("assets/un.png", width: MediaQuery.of(context).size.width/3.7,)),
                   ],
                 ),
               ],
@@ -279,7 +335,37 @@ class Search extends StatelessWidget {
             BottomNavigationBarItem(icon: Icon(Icons.explore), label: "Explore"),
             BottomNavigationBarItem(icon: Icon(Icons.switch_account), label: "Profile"),
           ],
-          onTap: navPressed,
+          onTap:  (int a) {
+            if (a == 0) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Home();}));
+            } else if (a == 1) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Search();}));
+            } else if (a == 2) {
+            } else if (a == 3) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Explore();}));
+            } else if (a == 4) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Profile();}));
+            } else if (a == 5) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Message();}));
+            } else if (a == 6){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Notify();}));
+            } else if (a == 7) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return SettingTab();}));
+            } else if (a == 8) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Followers();}));
+            } else if (a == 9) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Following();}));
+            } else if (a == 10) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Home();}));
+              runApp(const EditProfile());
+            } else if (a == 11) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Post();}));
+            } else if (a == 12) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Login();}));
+            } else if (a == 13) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return SignUp();}));
+            } else {}
+          },
           currentIndex: 1,
           selectedItemColor: Color.fromARGB(255, 229, 0, 179),
         ),
@@ -362,7 +448,7 @@ class Message extends StatelessWidget {
                 SizedBox(height: 30),
                 Row(
                   children: [
-                    TextButton(onPressed: () {navPressed(0);},child: Icon(Icons.arrow_back,color: Colors.black)),
+                    TextButton(onPressed: () {navPressed(context, 0);},child: Icon(Icons.arrow_back,color: Colors.black)),
                     Text("abhineetraj1", style: TextStyle(fontSize: 20)),
                   ],
                 ),
@@ -412,7 +498,37 @@ class Explore extends StatelessWidget {
             BottomNavigationBarItem(icon: Icon(Icons.explore), label: "Explore"),
             BottomNavigationBarItem(icon: Icon(Icons.switch_account), label: "Profile"),
           ],
-          onTap: navPressed,
+          onTap:  (int a) {
+            if (a == 0) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Home();}));
+            } else if (a == 1) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Search();}));
+            } else if (a == 2) {
+            } else if (a == 3) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Explore();}));
+            } else if (a == 4) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Profile();}));
+            } else if (a == 5) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Message();}));
+            } else if (a == 6){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Notify();}));
+            } else if (a == 7) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return SettingTab();}));
+            } else if (a == 8) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Followers();}));
+            } else if (a == 9) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Following();}));
+            } else if (a == 10) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Home();}));
+              runApp(const EditProfile());
+            } else if (a == 11) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Post();}));
+            } else if (a == 12) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return Login();}));
+            } else if (a == 13) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {return SignUp();}));
+            } else {}
+          },
           currentIndex: 3,
           selectedItemColor: Color.fromARGB(255, 229, 0, 179),
         ),
@@ -448,7 +564,7 @@ class Notify extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height:20),
-                Align(alignment: Alignment.centerLeft,child: TextButton(onPressed: () {navPressed(0);}, child: Icon(Icons.arrow_back, color: Colors.black,))),
+                Align(alignment: Alignment.centerLeft,child: TextButton(onPressed: () {navPressed(context, 0);}, child: Icon(Icons.arrow_back, color: Colors.black,))),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -541,7 +657,7 @@ class SettingTab extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: 20,),
-                Align(alignment: Alignment.centerLeft,child: TextButton(onPressed: () {navPressed(4);}, child: Icon(Icons.arrow_back, color: Colors.black))),
+                Align(alignment: Alignment.centerLeft,child: TextButton(onPressed: () {navPressed(context, 4);}, child: Icon(Icons.arrow_back, color: Colors.black))),
                 Padding(padding: EdgeInsets.all(10),child: Row(children: [Icon(Icons.settings), TextButton(onPressed: () {}, child: Text("Settings and privacy", style: TextStyle(fontSize: 19, color: Colors.black)))],)),
                 Padding(padding: EdgeInsets.all(10),child: Row(children: [Icon(Icons.bar_chart), TextButton(onPressed: () {}, child: Text("Insights", style: TextStyle(fontSize: 19, color: Colors.black)))],)),
                 Padding(padding: EdgeInsets.all(10),child: Row(children: [Icon(Icons.image_search), TextButton(onPressed: () {}, child: Text("Your activity", style: TextStyle(fontSize: 19, color: Colors.black)))],)),
@@ -551,7 +667,7 @@ class SettingTab extends StatelessWidget {
                 Padding(padding: EdgeInsets.all(10),child: Row(children: [Icon(Icons.verified_user), TextButton(onPressed: () {}, child: Text("Meta verified", style: TextStyle(fontSize: 19, color: Colors.black)))],)),
                 Padding(padding: EdgeInsets.all(10),child: Row(children: [Icon(Icons.favorite), TextButton(onPressed: () {}, child: Text("Favourite", style: TextStyle(fontSize: 19, color: Colors.black)))],)),
                 Padding(padding: EdgeInsets.all(10),child: Row(children: [Icon(Icons.account_box), TextButton(onPressed: () {}, child: Text("Discover user", style: TextStyle(fontSize: 19, color: Colors.black)))],)),
-                Padding(padding: EdgeInsets.all(10),child: Row(children: [Icon(Icons.logout), TextButton(onPressed: () {navPressed(12);}, child: Text("Log out", style: TextStyle(fontSize: 19, color: Colors.black)))],)),
+                Padding(padding: EdgeInsets.all(10),child: Row(children: [Icon(Icons.logout), TextButton(onPressed: () {navPressed(context, 12);}, child: Text("Log out", style: TextStyle(fontSize: 19, color: Colors.black)))],)),
               ],
             ),
           ),
@@ -565,7 +681,7 @@ class Followers extends StatelessWidget {
   const Followers({super.key});
 
   void return_list_followers() {
-    //var followersList = [TextButton(onPressed: () {navPressed(4);},child: Icon(Icons.arrow_back,color: Colors.black))];
+    //var followersList = [TextButton(onPressed: () {navPressed(context, 4);},child: Icon(Icons.arrow_back,color: Colors.black))];
     for (var i = 0; i < 100; i++) {
       //followersList.add(Row(children: [Image.asset("assets/profile.png", height: 30,),Text("username"),],));
     }
@@ -578,7 +694,7 @@ class Followers extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(children: [
               SizedBox(height: 20,),
-              Align(alignment: Alignment.centerLeft, child: TextButton(onPressed: () {navPressed(4);},child: Icon(Icons.arrow_back,color: Colors.black))),
+              Align(alignment: Alignment.centerLeft, child: TextButton(onPressed: () {navPressed(context, 4);},child: Icon(Icons.arrow_back,color: Colors.black))),
               for (int i =0; i < 100; i=i+1) Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,children: [Row(children: [Image.asset("assets/profile.png", height: 35,),SizedBox(width: 20,),Text("username$i", style: TextStyle(fontSize: 20)),],),ElevatedButton(onPressed: () {}, child: Text("Follow", style:TextStyle(fontSize: 20)))],)
             ],),
           ),
@@ -600,7 +716,7 @@ class Following extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(children: [
               SizedBox(height: 20,),
-              Align(alignment: Alignment.centerLeft, child: TextButton(onPressed: () {navPressed(4);},child: Icon(Icons.arrow_back,color: Colors.black))),
+              Align(alignment: Alignment.centerLeft, child: TextButton(onPressed: () {navPressed(context, 4);},child: Icon(Icons.arrow_back,color: Colors.black))),
               for (int i=0; i < 5; i=i+1) Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,children: [Row(children: [Image.asset("assets/profile.png", height: 35,),SizedBox(width: 20,),Text("username$i", style: TextStyle(fontSize: 20)),],),ElevatedButton(onPressed: () {}, child: Text("unfollow", style:TextStyle(fontSize: 20)))],),            ],),
           ),
         ),
@@ -621,7 +737,7 @@ class EditProfile extends StatelessWidget {
             children: [
               SizedBox(height: 25,),
               Align(alignment: Alignment.centerLeft,child: TextButton(onPressed: () {
-                navPressed(4);
+                navPressed(context, 4);
               },child: Icon(Icons.arrow_back, color: Colors.black,)),),
               Align(alignment: Alignment.center,child: Image.asset("assets/profile.png", height: 160,)),
               Icon(Icons.camera),
@@ -654,7 +770,7 @@ class Post extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(height: 25,),
-              Align(alignment: Alignment.centerLeft ,child: TextButton(onPressed: () {navPressed(4);}, child: Icon(Icons.arrow_back, color: Colors.black,))),
+              Align(alignment: Alignment.centerLeft ,child: TextButton(onPressed: () {navPressed(context, 4);}, child: Icon(Icons.arrow_back, color: Colors.black,))),
               Row(
                 children: [
                   Image.asset("assets/profile.png", height: 40,),
@@ -699,8 +815,8 @@ class Login extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  ElevatedButton(onPressed: () {navPressed(0);}, child: Text("Login")),
-                  TextButton(onPressed: () {navPressed(13);}, child: Text("Sign Up"))
+                  ElevatedButton(onPressed: () {navPressed(context, 0);}, child: Text("Login")),
+                  TextButton(onPressed: () {navPressed(context, 13);}, child: Text("Sign Up"))
                 ],
               ),
             ],
@@ -735,8 +851,8 @@ class SignUp extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  ElevatedButton(onPressed: () {navPressed(0);}, child: Text("Sign Up")),
-                  TextButton(onPressed: () {navPressed(12);}, child: Text("Login"))
+                  ElevatedButton(onPressed: () {navPressed(context, 0);}, child: Text("Sign Up")),
+                  TextButton(onPressed: () {navPressed(context, 12);}, child: Text("Login"))
                 ],
               ),
             ],
